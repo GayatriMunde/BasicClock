@@ -1,4 +1,5 @@
 import 'package:Puzzle_Alarm/HomePage.dart';
+import 'package:Puzzle_Alarm/classes/dependencies.dart';
 import 'package:flutter/material.dart';
 
 void main() {

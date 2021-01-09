@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:numberpicker/numberpicker.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class TimerMain extends StatefulWidget {
   @override
@@ -16,10 +15,6 @@ class _TimerMainState extends State<TimerMain> {
   int sec = 0;
   int timeForTimer = 0;
   String timeToDisplay = "";
-  int secDisplay = 00;
-  int minDisplay = 00;
-  int hourDisplay = 00;
-  int temp = 0;
   bool started = true;
   bool stopped = true;
   bool checkTimer = true;
@@ -52,16 +47,7 @@ class _TimerMainState extends State<TimerMain> {
           } else {
             timeForTimer = timeForTimer - 1;
           }
-
-          hourDisplay = timeForTimer ~/ 3600;
-          temp = (timeForTimer.remainder(3600)).toInt();
-          minDisplay = temp ~/ 60;
-          secDisplay = (temp.remainder(60)).toInt();
-          timeToDisplay = hourDisplay.toString() +
-              " : " +
-              minDisplay.toString() +
-              " : " +
-              secDisplay.toString();
+          timeToDisplay = timeForTimer.toString();
         });
       });
     }
@@ -186,7 +172,7 @@ class _TimerMainState extends State<TimerMain> {
             Expanded(
               flex: 1,
               child: Text(
-                timeToDisplay,
+                "Time Remaining:" + timeToDisplay,
                 style: TextStyle(
                   fontSize: 35.0,
                   fontWeight: FontWeight.w600,
