@@ -16,8 +16,10 @@ class _ClockViewState extends State<ClockView> {
   @override
   void initState() {
     Timer.periodic(Duration(seconds: 1), (timer) {
-    setState(() {});
-     });
+      if (this.mounted){
+        setState(() {});
+      }
+    });
     super.initState();
   }
 
@@ -129,3 +131,4 @@ class ClockPainter extends CustomPainter {
     return true;
   }
 }
+

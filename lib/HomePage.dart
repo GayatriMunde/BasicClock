@@ -1,3 +1,4 @@
+import 'package:Puzzle_Alarm/Screens/Alarms.dart';
 import 'package:Puzzle_Alarm/Screens/ClockPage.dart';
 import 'package:Puzzle_Alarm/Screens/Timer.dart';
 import 'package:Puzzle_Alarm/Screens/stopwatch.dart';
@@ -58,7 +59,13 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => AlarmPage()
+                          ),
+                        );
+                      },
                       child: Column(
                         children: <Widget>[
                           Icon(

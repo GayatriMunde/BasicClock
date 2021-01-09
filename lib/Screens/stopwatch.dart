@@ -74,7 +74,8 @@ class _StopWatchMainState extends State<StopWatchMain> {
                   builder: (context) => HomePage(),
                 ),
               );
-            }),
+            },
+          ),
       ),
       backgroundColor: Color(0xFF2D2F41),
       body: Center(
